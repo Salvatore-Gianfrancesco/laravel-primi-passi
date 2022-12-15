@@ -13,6 +13,32 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// home route
 Route::get('/', function () {
-    return view('home');
+    $data = ['message' => 'Hello world!'];
+    return view('home', $data);
+});
+
+// about-me route
+Route::get('/about-me', function () {
+    $data = ['message' => 'About me page.'];
+    return view('about-me', $data);
+});
+
+// learn-more route
+Route::get('/learn-more', function () {
+    return view('learn-more');
+});
+
+// contact route
+Route::get('/contact', function () {
+    $data = [
+        'contacts' => [
+            'facebook',
+            'twitter',
+            'gmail',
+            'instagram'
+        ]
+    ];
+    return view('contact', $data);
 });
